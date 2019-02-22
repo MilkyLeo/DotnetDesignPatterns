@@ -12,17 +12,17 @@ namespace CommandPattern
         {
             var patron = new Patron();
 
-            patron.MakeOneItemOrder(1 /*Add*/, new MenuItem("French Fries", 2, 1.99));
-            patron.MakeOneItemOrder(1 /*Add*/, new MenuItem("Hamburger", 2, 2.59));
-            patron.MakeOneItemOrder(1 /*Add*/, new MenuItem("Drink", 2, 1.19));
+            patron.MakeOneItemOrder(CommandOption.Add, new MenuItem("French Fries", 2, 1.99));
+            patron.MakeOneItemOrder(CommandOption.Add, new MenuItem("Hamburger", 2, 2.59));
+            patron.MakeOneItemOrder(CommandOption.Add, new MenuItem("Drink", 2, 1.19));
             patron.ShowCurrentOrder();
 
             //Remove the French Fries
-            patron.MakeOneItemOrder(3 /*Remove*/, new MenuItem("French Fries", 2, 1.99));
+            patron.MakeOneItemOrder(CommandOption.Remove, new MenuItem("French Fries", 2, 1.99));
             patron.ShowCurrentOrder();
 
             //Now we want 4 Humburgers rather than 2
-            patron.MakeOneItemOrder(2 /*Modify*/, new MenuItem("Hamburger", 4, 2.59));
+            patron.MakeOneItemOrder(CommandOption.Modify, new MenuItem("Hamburger", 4, 2.59));
             patron.ShowCurrentOrder();
 
             Console.ReadKey();

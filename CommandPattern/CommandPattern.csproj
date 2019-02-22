@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AddCommand.cs" />
     <Compile Include="CommandFactory.cs" />
+    <Compile Include="CommandOption.cs" />
     <Compile Include="FastFoodOrder.cs" />
     <Compile Include="MenuItem.cs" />
     <Compile Include="ModifyCommand.cs" />

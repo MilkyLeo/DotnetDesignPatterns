@@ -2,15 +2,15 @@
 {
     public class CommandFactory
     {
-        public OrderCommand GetCommand(int commandOption)
+        public OrderCommand GetCommand(CommandOption commandOption)
         {
             switch (commandOption)
             {
-                case 1:
+                case CommandOption.Add:
                     return new AddCommand();
-                case 2:
+                case CommandOption.Modify:
                     return new ModifyCommand();
-                case 3:
+                case CommandOption.Remove:
                     return new RemoveCommand();
                 default:
                     return new AddCommand();

@@ -11,14 +11,14 @@ namespace CommandPattern
             _order = new FastFoodOrder();
         }
 
-        public void MakeOneItemOrder(int commandOption, MenuItem item)
+        public void MakeOneItemOrder(CommandOption commandOption, MenuItem item)
         {
             SetCommand(commandOption);
             SetMenuItem(item);
 
             ExecuteCommand();
         }
-        private void SetCommand(int commandOption)
+        private void SetCommand(CommandOption commandOption)
         {
             _orderCommand = new CommandFactory().GetCommand(commandOption);
         }
