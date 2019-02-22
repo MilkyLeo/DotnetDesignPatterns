@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCommand.cs" />
+    <Compile Include="CommandFactory.cs" />
+    <Compile Include="FastFoodOrder.cs" />
+    <Compile Include="MenuItem.cs" />
+    <Compile Include="ModifyCommand.cs" />
+    <Compile Include="OrderCommand.cs" />
+    <Compile Include="Patron.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
