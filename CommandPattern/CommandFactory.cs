@@ -2,20 +2,19 @@
 {
     public class CommandFactory
     {
-        public OrderCommand GetCommand(CommandOption commandOption)
+        public OrderCommand CreateAddCommand()
         {
-            switch (commandOption)
-            {
-                case CommandOption.Add:
-                    return new AddCommand();
-                case CommandOption.Modify:
-                    return new ModifyCommand();
-                case CommandOption.Remove:
-                    return new RemoveCommand();
-                default:
-                    return new AddCommand();
-            }
+            return new AddCommand();
+        }
 
+        public OrderCommand CreateRemoveCommand()
+        {
+            return new RemoveCommand();
+        }
+
+        public OrderCommand CreateModifyCommand()
+        {
+            return new ModifyCommand();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace CommandPattern
             CurrentItems = new List<MenuItem>();
         }
 
-        public void ExcuteCommand(OrderCommand command, MenuItem item) //Shouldn't be here!
+        public void ExcuteCommand(OrderCommand command, MenuItem item)
         {
             command.Execute(CurrentItems, item);
         }

@@ -11,16 +11,21 @@ namespace CommandPattern
             _order = new FastFoodOrder();
         }
 
-        public void MakeOneItemOrder(CommandOption commandOption, MenuItem item)
+        public void AddOneMenuItemToOrder(MenuItem menuItem)
         {
-            SetCommand(commandOption);
-            SetMenuItem(item);
-
-            ExecuteCommand();
+            _orderCommand = new CommandFactory().CreateAddCommand();
+            SetMenuItemAndExecuteMenuOrder(menuItem);
         }
-        private void SetCommand(CommandOption commandOption)
+        public void RemoveOneMenuItemFromOrder(MenuItem menuItem)
         {
-            _orderCommand = new CommandFactory().GetCommand(commandOption);
+            _orderCommand = new CommandFactory().CreateRemoveCommand();
+            SetMenuItemAndExecuteMenuOrder(menuItem);
+        }
+
+        public void ModifyOneMenuItemInOrder(MenuItem menuItem)
+        {
+            _orderCommand = new CommandFactory().CreateModifyCommand();
+            SetMenuItemAndExecuteMenuOrder(menuItem);
         }
 
         private void SetMenuItem(MenuItem item)
@@ -31,6 +36,13 @@ namespace CommandPattern
         public void ExecuteCommand()
         {
             _order.ExcuteCommand(_orderCommand, _menuItem);
+        }
+
+        private void SetMenuItemAndExecuteMenuOrder(MenuItem item)
+        {
+            SetMenuItem(item);
+
+            ExecuteCommand();
         }
 
         public void ShowCurrentOrder()
